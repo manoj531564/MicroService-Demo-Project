@@ -1,0 +1,5 @@
+server.port=9296
+
+spring.application.name=CONFIG-SERVER
+spring.cloud.config.server.git.uri=https://github.com/manoj531564/config-server/blob/main/application.properties
+spring.cloud.config.server.git.clone-on-start=true

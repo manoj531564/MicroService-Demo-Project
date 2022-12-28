@@ -1,0 +1,5 @@
+package com.dailycodebuffer.cloud.gateway;
+
+public class FallBackMethodController {
+
+}

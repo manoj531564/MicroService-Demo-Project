@@ -1,0 +1,27 @@
+package com.dailycodebuffer.cloud.gateway;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+@RestController
+public class FallBackMethodController {
+	
+	@HystrixCommand (fallbackMethod = "fallback_hello", commandProperties = {
+			   @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+			})
+	
+	@GetMapping("/userServiceFallBack")
+	public String userServiceFallBackMEthod() {
+		return "User Servuce is taking longer than Expected."
+				+ "Please try again later";
+	}
+	
+	@GetMapping("/departmentServiceFallBack")
+	public String departmentServiceFallBackMethod() {
+		return "Department Service is taking longer than Expected."
+				+ "Please try again later";
+	}
+	
+}

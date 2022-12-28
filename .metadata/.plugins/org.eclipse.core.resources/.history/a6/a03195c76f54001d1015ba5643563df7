@@ -1,0 +1,15 @@
+package com.in28minutes.rest.webservice.restfulwebservices.user;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserResource {
+	
+	@GetMapping("/getUsers")
+	public List<User> getUsers(){
+		return null;
+	}
+}
